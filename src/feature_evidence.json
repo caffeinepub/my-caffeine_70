@@ -1,0 +1,63 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-theme-system-that-supports-light-and-dark-modes-by-toggling-the-dark-class-on-the-root-document-element-using-tailwind-s-class-based-dark-mode",
+      "featureTitle": "Implement a theme system that supports Light and Dark modes by toggling the `dark` class on the root document element, using Tailwind’s class-based dark mode.",
+      "files": [
+        "frontend/src/hooks/useTheme.ts",
+        "frontend/src/theme/ThemeProvider.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-user-facing-theme-toggle-control-in-the-header-near-the-existing-language-selector-that-lets-the-user-switch-between-light-and-dark-modes-at-runtime",
+      "featureTitle": "Add a user-facing theme toggle control in the header (near the existing language selector) that lets the user switch between Light and Dark modes at runtime.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ThemeToggle.tsx",
+        "frontend/src/i18n/translations.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-persist-the-user-s-theme-choice-locally-and-restore-it-on-subsequent-visits-when-no-preference-is-saved-choose-a-sensible-default-prefer-the-os-color-scheme-if-available",
+      "featureTitle": "Persist the user’s theme choice locally and restore it on subsequent visits; when no preference is saved, choose a sensible default (prefer the OS color scheme if available).",
+      "files": [
+        "frontend/src/theme/ThemeProvider.tsx",
+        "frontend/src/theme/themeStorage.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

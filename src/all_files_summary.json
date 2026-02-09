@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Simple actor storing an achievementPower counter with increment and query functions.",
+  "feature_evidence.json": "Feature evidence report mapping theme‑related requirements to implementation files and components.",
+  "frontend-file-summaries.txt": "Text file containing prewritten summaries of all frontend files and their roles.",
+  "frontend/index.css": "Tailwind base stylesheet defining OKLCH color variables for light and dark themes and applying them to root and dark classes.",
+  "frontend/index.html": "Basic HTML entry point loading the React app via main.tsx.",
+  "frontend/src/App.tsx": "Main app layout with header, theme toggle, language selector, and content sections using i18n text.",
+  "frontend/src/components/AchievementCounter.tsx": "Component displaying achievement power, handling increment logic, and showing feedback with animations and i18n strings.",
+  "frontend/src/components/ThemeToggle.tsx": "Button component that toggles light/dark theme with tooltip and i18n labels.",
+  "frontend/src/hooks/useAchievementPower.ts": "React Query hooks to fetch and increment achievement power via the backend actor.",
+  "frontend/src/hooks/useActor.ts": "Hook creating and managing authenticated or anonymous backend actors using Internet Identity.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and provider for managing Internet Identity authentication, loading stored identities, and handling login state.",
+  "frontend/src/hooks/useTheme.ts": "Simple hook that returns the current theme context and ensures it is used within a ThemeProvider.",
+  "frontend/src/i18n/I18nProvider.tsx": "Provides an i18n context with language state, initializes it from storage or browser settings, and persists changes.",
+  "frontend/src/i18n/translations.ts": "Defines translation types and the full English/Japanese translation dictionaries used across the app.",
+  "frontend/src/i18n/useI18n.ts": "Hook that exposes the current language, setter, and resolved translation object from the i18n context.",
+  "frontend/src/index.css": "Tailwind base styles plus custom theme variables, typography, and background styling for light and dark modes.",
+  "frontend/src/main.tsx": "App entry point that mounts React, wrapping the app with React Query and Internet Identity providers.",
+  "frontend/src/theme/ThemeProvider.tsx": "Provides theme context with light/dark mode support, syncing theme state to the DOM and storage.",
+  "frontend/src/theme/themeStorage.ts": "Handles reading, writing, and determining initial theme preference from localStorage or system settings.",
+  "frontend/tailwind.config.js": "Tailwind configuration enabling class-based dark mode, custom colors, fonts, animations, and container settings.",
+  "project_state.json": "Project metadata describing goals, requirements, existing features, and architectural notes for the IC-based app."
+}

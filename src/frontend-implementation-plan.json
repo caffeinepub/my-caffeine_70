@@ -1,0 +1,80 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Dark mode toggle with persisted theme preference (Tailwind class-based)",
+  "requirements": [
+    {
+      "id": "REQ-9",
+      "summary": "Implement app-wide Light/Dark theming by toggling the `dark` class on the root document element using Tailwind class-based dark mode.",
+      "acceptanceCriteria": [
+        "When Dark mode is enabled, the app renders using the `.dark { ... }` CSS variables defined in `frontend/src/index.css` (e.g., background, foreground, card colors visibly change).",
+        "When Dark mode is disabled, the app renders using the `:root { ... }` CSS variables defined in `frontend/src/index.css`.",
+        "The theme application works across the entire app (header, counter card, instructions, footer)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/theme/ThemeProvider.tsx",
+          "operation": "create",
+          "description": "Create a ThemeProvider + React context that owns the current theme state and applies it globally by adding/removing the `dark` class on `document.documentElement` so Tailwind’s class-based dark mode and the CSS variables in `frontend/src/index.css` take effect."
+        },
+        {
+          "path": "frontend/src/hooks/useTheme.ts",
+          "operation": "create",
+          "description": "Add a `useTheme()` hook that exposes theme state and a setter/toggle API to the UI layer, backed by the ThemeProvider context."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Wire the ThemeProvider into the app bootstrap so the `dark` class is applied before/alongside initial render, ensuring theme affects the entire app UI."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add an i18n-backed Light/Dark theme toggle control in the header near the language selector using existing shadcn/ui components.",
+      "acceptanceCriteria": [
+        "A clickable control is present in the header that toggles between Light and Dark modes without a page reload.",
+        "The toggle uses existing UI components (e.g., Shadcn `Button` and an icon) and matches the current design quality level.",
+        "Any user-visible label/tooltip text introduced for the toggle is sourced from the i18n layer (English and Japanese translations added)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ThemeToggle.tsx",
+          "operation": "create",
+          "description": "Create a header-ready ThemeToggle component that uses shadcn/ui `Button` (compose only; do not modify `frontend/src/components/ui`) and lucide icons (e.g., Sun/Moon) to toggle theme via `useTheme()`. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Place the ThemeToggle control in the header next to the existing language selector, keeping layout changes minimal and ensuring it is visible and usable without page reload."
+        },
+        {
+          "path": "frontend/src/i18n/translations.ts",
+          "operation": "modify",
+          "description": "Extend the translation types and dictionaries (English + Japanese) with theme toggle user-facing strings (e.g., label/tooltip for switching to Light/Dark) and ensure the header toggle reads them via `useI18n()`."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Persist the user’s theme choice to local storage, restore it on subsequent visits, and default to the OS color scheme when no preference exists.",
+      "acceptanceCriteria": [
+        "After selecting Dark mode and refreshing the page, Dark mode remains enabled.",
+        "After selecting Light mode and refreshing the page, Light mode remains enabled.",
+        "If there is no saved theme preference, the initial theme follows `prefers-color-scheme` (dark -> Dark mode, otherwise Light mode)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/theme/themeStorage.ts",
+          "operation": "create",
+          "description": "Add small utilities for reading/writing the saved theme preference (e.g., localStorage key, validation) and for computing a default theme from `prefers-color-scheme` when no preference exists."
+        },
+        {
+          "path": "frontend/src/theme/ThemeProvider.tsx",
+          "operation": "modify",
+          "description": "Implement persisted initialization and updates: on first load choose saved theme if present, otherwise derive from `prefers-color-scheme`; when the user changes theme, save the preference locally and immediately apply/remove the `dark` class on `document.documentElement`."
+        }
+      ]
+    }
+  ]
+}

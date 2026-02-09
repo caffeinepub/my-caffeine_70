@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        /* Warm parchment background */
+        --background: 0.96 0.02 60;
+        /* Deep charcoal text */
+        --foreground: 0.25 0.01 30;
+        /* Slightly darker parchment for cards */
+        --card: 0.98 0.015 55;
+        --card-foreground: 0.25 0.01 30;
+        --popover: 0.98 0.015 55;
+        --popover-foreground: 0.25 0.01 30;
+        /* Rich amber primary */
+        --primary: 0.65 0.15 45;
+        --primary-foreground: 0.98 0.01 55;
+        /* Warm secondary */
+        --secondary: 0.88 0.03 50;
+        --secondary-foreground: 0.25 0.01 30;
+        /* Muted warm tones */
+        --muted: 0.90 0.02 50;
+        --muted-foreground: 0.50 0.01 30;
+        /* Accent crimson */
+        --accent: 0.55 0.18 15;
+        --accent-foreground: 0.98 0.01 55;
+        /* Destructive red */
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.01 55;
+        /* Subtle borders */
+        --border: 0.85 0.02 50;
+        --input: 0.85 0.02 50;
+        --ring: 0.65 0.15 45;
+        /* Chart colors - warm palette */
+        --chart-1: 0.65 0.15 45;
+        --chart-2: 0.55 0.18 15;
+        --chart-3: 0.70 0.12 80;
+        --chart-4: 0.60 0.14 30;
+        --chart-5: 0.50 0.16 10;
+    }
+
+    .dark {
+        /* Dark warm background */
+        --background: 0.20 0.02 30;
+        /* Light parchment text */
+        --foreground: 0.95 0.015 55;
+        /* Slightly lighter dark card */
+        --card: 0.25 0.02 30;
+        --card-foreground: 0.95 0.015 55;
+        --popover: 0.25 0.02 30;
+        --popover-foreground: 0.95 0.015 55;
+        /* Bright amber primary */
+        --primary: 0.75 0.18 45;
+        --primary-foreground: 0.20 0.02 30;
+        /* Dark secondary */
+        --secondary: 0.30 0.02 30;
+        --secondary-foreground: 0.95 0.015 55;
+        /* Dark muted */
+        --muted: 0.30 0.02 30;
+        --muted-foreground: 0.65 0.02 40;
+        /* Accent crimson */
+        --accent: 0.60 0.20 15;
+        --accent-foreground: 0.95 0.015 55;
+        /* Destructive red */
+        --destructive: 0.60 0.24 25;
+        --destructive-foreground: 0.95 0.015 55;
+        /* Subtle dark borders */
+        --border: 0.35 0.02 30;
+        --input: 0.35 0.02 30;
+        --ring: 0.75 0.18 45;
+        /* Chart colors - warm palette */
+        --chart-1: 0.75 0.18 45;
+        --chart-2: 0.60 0.20 15;
+        --chart-3: 0.80 0.15 80;
+        --chart-4: 0.70 0.16 30;
+        --chart-5: 0.65 0.18 10;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        background-image: url('/assets/generated/paper-texture-tile.dim_512x512.png');
+        background-repeat: repeat;
+        background-size: 256px 256px;
+        background-blend-mode: multiply;
+        font-family: 'Georgia', 'Palatino', 'Times New Roman', serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Garamond', 'Georgia', serif;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+}
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+}

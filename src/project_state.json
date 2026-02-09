@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "Internet Computer上で動作する『禁欲カウンター』アプリを、既存版より品質を上げて再構築するプロジェクト。匿名で達成回数（総達成パワー）を記録・表示し、達成ボタン押下で（仕様として）+2される可能性がある。",
+  "architectural_notes": [
+    "Internet Computer（IC）上でホスティング/実行されるアプリとして構築する"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-polished-single-page-react-ui-that-explains-the-concept-and-allows-users-to-anonymously-add-an-achievement-to-the-global-total",
+      "title": "Create a polished single-page React UI that explains the concept and allows users to anonymously add an achievement to the global total.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-react-query-for-data-fetching-and-cache-updates-for-the-counter-read-increment-flows",
+      "title": "Use React Query for data fetching and cache updates for the counter read/increment flows.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-distinctive-visual-theme-across-the-app-colors-typography-spacing-components-to-make-the-new-version-feel-significantly-higher-quality",
+      "title": "Apply a coherent, distinctive visual theme across the app (colors, typography, spacing, components) to make the new version feel significantly higher quality.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-visual-assets-logo-and-subtle-background-and-render-them-in-the-frontend-as-local-static-files",
+      "title": "Add generated static visual assets (logo and subtle background) and render them in the frontend as local static files.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-bilingual-localization-japanese-and-english-across-the-ui-including-a-language-selector-that-lets-the-user-switch-languages-at-runtime",
+      "title": "Add bilingual localization (Japanese and English) across the UI, including a language selector that lets the user switch languages at runtime.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-the-user-s-selected-language-locally-and-choose-a-sensible-default-when-no-preference-is-saved",
+      "title": "Persist the user’s selected language locally and choose a sensible default when no preference is saved.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refactor-hard-coded-ui-strings-into-a-simple-i18n-layer-translation-dictionary-helper-hook-and-update-components-to-use-it",
+      "title": "Refactor hard-coded UI strings into a simple i18n layer (translation dictionary + helper/hook) and update components to use it.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-theme-system-that-supports-light-and-dark-modes-by-toggling-the-dark-class-on-the-root-document-element-using-tailwind-s-class-based-dark-mode",
+      "title": "Implement a theme system that supports Light and Dark modes by toggling the `dark` class on the root document element, using Tailwind’s class-based dark mode.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-user-facing-theme-toggle-control-in-the-header-near-the-existing-language-selector-that-lets-the-user-switch-between-light-and-dark-modes-at-runtime",
+      "title": "Add a user-facing theme toggle control in the header (near the existing language selector) that lets the user switch between Light and Dark modes at runtime.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-persist-the-user-s-theme-choice-locally-and-restore-it-on-subsequent-visits-when-no-preference-is-saved-choose-a-sensible-default-prefer-the-os-color-scheme-if-available",
+      "title": "Persist the user’s theme choice locally and restore it on subsequent visits; when no preference is saved, choose a sensible default (prefer the OS color scheme if available).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Internet Computer上で『禁欲カウンター』の高品質版を作成（匿名の総達成パワー表示／達成ボタンでカウント、+2倍増仕様を含む）",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement a persistent, anonymous global counter in the Motoko canister that stores the app’s total \"Achievement Power\" and supports reading and incrementing it.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "アプリを日本語・英語の両方で表示できるようにする（多言語対応/i18n、言語切替または自動判定）",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "UIにダークモード（Dark Mode）を追加する",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "禁欲カウンター",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,73 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T06:23:30.921Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 3,
+    "items": [
+      {
+        "id": "REQ-10",
+        "summary": "Add a user-facing theme toggle control in the header (near the existing language selector) that lets the user switch between Light and Dark modes at runtime.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ThemeToggle.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/i18n/translations.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ThemeToggle.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/i18n/translations.ts"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Persist the user’s theme choice locally and restore it on subsequent visits; when no preference is saved, choose a sensible default (prefer the OS color scheme if available).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/theme/themeStorage.ts",
+          "frontend/src/theme/ThemeProvider.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/theme/themeStorage.ts",
+          "frontend/src/theme/ThemeProvider.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Implement a theme system that supports Light and Dark modes by toggling the `dark` class on the root document element, using Tailwind’s class-based dark mode.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/theme/ThemeProvider.tsx",
+          "frontend/src/hooks/useTheme.ts",
+          "frontend/src/main.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/theme/ThemeProvider.tsx",
+          "frontend/src/hooks/useTheme.ts"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ThemeToggle.tsx",
+    "frontend/src/hooks/useTheme.ts",
+    "frontend/src/i18n/translations.ts",
+    "frontend/src/theme/ThemeProvider.tsx",
+    "frontend/src/theme/themeStorage.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
