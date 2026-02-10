@@ -1,12 +1,14 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
+  "projectStateVersion": 9,
   "summary": "Internet Computer上で動作する『禁欲カウンター』アプリを、既存版より品質を上げて再構築するプロジェクト。匿名で達成回数（総達成パワー）を記録・表示し、達成ボタン押下で（仕様として）+2される可能性がある。",
   "architectural_notes": [
     "Internet Computer（IC）上でホスティング/実行されるアプリとして構築する"
   ],
-  "known_issues": [],
-  "isFixRequest": false,
+  "known_issues": [
+    "本番デプロイ後に全ブラウザで白画面になる（アプリのバンドル読み込み/実行エラーの可能性）。修正が必要。"
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-polished-single-page-react-ui-that-explains-the-concept-and-allows-users-to-anonymously-add-an-achievement-to-the-global-total",
@@ -85,6 +87,22 @@
       "title": "Persist the user’s theme choice locally and restore it on subsequent visits; when no preference is saved, choose a sensible default (prefer the OS color scheme if available).",
       "reqIds": [
         "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-all-browser-white-screen-by-ensuring-the-react-tree-includes-themeprovider-before-any-component-calls-usetheme-e-g-themetoggle-update-the-app-composition-without-modifying-immutable-files-so-that-themetoggle-no-longer-throws-usetheme-must-be-used-within-a-themeprovider-at-runtime",
+      "title": "Fix the all-browser white screen by ensuring the React tree includes `ThemeProvider` before any component calls `useTheme` (e.g., `ThemeToggle`). Update the app composition (without modifying immutable files) so that `ThemeToggle` no longer throws `useTheme must be used within a ThemeProvider` at runtime.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-user-friendly-top-level-error-boundary-or-equivalent-global-runtime-error-handling-so-that-if-any-unexpected-rendering-error-occurs-users-see-an-english-fallback-message-instead-of-a-blank-page-and-the-underlying-error-is-logged-to-the-console-for-debugging",
+      "title": "Add a user-friendly top-level error boundary (or equivalent global runtime error handling) so that if any unexpected rendering error occurs, users see an English fallback message instead of a blank page, and the underlying error is logged to the console for debugging.",
+      "reqIds": [
+        "REQ-13"
       ],
       "version": 1
     }

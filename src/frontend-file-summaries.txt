@@ -2,7 +2,7 @@
   "frontend/index.html": "Updated HTML entry point with English page title \"Achievement Power Counter\".",
   "frontend/src/index.css": "Global styles with warm parchment-themed OKLCH color system, serif typography, and subtle paper texture background for both light and dark modes.",
   "frontend/tailwind.config.js": "Extended Tailwind configuration with warm color palette, serif fonts (Georgia, Garamond), custom shadows (warm, warm-lg), and custom animations (pulse-glow, slide-up).",
-  "frontend/src/App.tsx": "Main application component with I18nProvider wrapper, ThemeToggle and language selector in header, and all UI text sourced from i18n translations.",
+  "frontend/src/App.tsx": "Main application component wrapped with AppErrorBoundary, ThemeProvider, and I18nProvider to ensure all context dependencies are satisfied before rendering AppContent with theme toggle and bilingual UI.",
   "frontend/src/components/AchievementCounter.tsx": "Achievement counter card component with all user-visible strings (title, buttons, messages, hints) replaced with i18n translation lookups for bilingual support.",
   "frontend/src/hooks/useAchievementPower.ts": "React Query hooks for fetching current Achievement Power total and incrementing it, with automatic cache invalidation on successful mutation.",
   "frontend/src/i18n/translations.ts": "Complete translations dictionary with theme toggle strings added (light, dark, switchToLight, switchToDark) for both English and Japanese, organized by component sections.",
@@ -10,7 +10,8 @@
   "frontend/src/i18n/useI18n.ts": "Custom hook that provides access to current language, language setter, and translation function from the I18n context.",
   "frontend/src/theme/themeStorage.ts": "Utilities for persisting theme preference to localStorage, loading saved theme, detecting system color scheme preference, and computing initial theme with fallback to OS preference.",
   "frontend/src/theme/ThemeProvider.tsx": "React context provider that manages theme state (light/dark), applies the dark class to document root for Tailwind's class-based dark mode, and persists theme changes to localStorage.",
-  "frontend/src/hooks/useTheme.ts": "Custom hook that provides access to theme state and toggle functions from ThemeContext, with error handling for usage outside provider.",
+  "frontend/src/hooks/useTheme.ts": "Custom hook that provides access to theme state and toggle functions from ThemeContext, with defensive fallback returning safe default values and console warnings when used outside provider to prevent app crashes.",
   "frontend/src/components/ThemeToggle.tsx": "Header-ready theme toggle button component using shadcn Button and Tooltip with Sun/Moon icons, displaying bilingual labels from i18n translations.",
-  "frontend/src/main.tsx": "Application entry point wrapping the app with QueryClientProvider, InternetIdentityProvider, and ThemeProvider to enable theme functionality across the entire application."
+  "frontend/src/main.tsx": "Application entry point wrapping the app with QueryClientProvider, InternetIdentityProvider, and ThemeProvider to enable theme functionality across the entire application.",
+  "frontend/src/components/AppErrorBoundary.tsx": "React error boundary component that catches render-time exceptions, logs error details (message and stack) to browser console, and displays a minimal English fallback UI with refresh action instead of blank screen."
 }

@@ -10,6 +10,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ThemeToggle } from './components/ThemeToggle';
+import { ThemeProvider } from './theme/ThemeProvider';
+import { AppErrorBoundary } from './components/AppErrorBoundary';
 
 function AppContent() {
   const { language, setLanguage, t } = useI18n();
@@ -137,9 +139,13 @@ function AppContent() {
 
 function App() {
   return (
-    <I18nProvider>
-      <AppContent />
-    </I18nProvider>
+    <AppErrorBoundary>
+      <ThemeProvider>
+        <I18nProvider>
+          <AppContent />
+        </I18nProvider>
+      </ThemeProvider>
+    </AppErrorBoundary>
   );
 }
 
